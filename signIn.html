@@ -25,7 +25,7 @@ body{
   color: #57492B;
 }
 .topnav .especial{
-  width: 55%;
+  width: 40%;
 }
 .topnav a .noactive{
   margin-left: 20%;
@@ -213,62 +213,70 @@ margin-top: 50%;
   </footer>
 </body>
 <script>
-  // Función para manejar la navegación responsive
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    // Si la clase actual es "topnav", añade la clase "responsive"; de lo contrario, establece la clase como "topnav"
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
+ function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
   }
+}
+
+function logIn() {
+
+var usuarioinstanciado = new _usuario(
+
   
-  // Función para iniciar sesión
-  function logIn() {
-    // Crea una instancia de usuario con los valores de correo y clave
-    var usuarioinstanciado = new _usuario(
-      document.getElementById("correo").value,
-      document.getElementById("clave").value,
-      ''
-    );
-    // Llama al método logIn del objeto usuarioinstanciado para iniciar sesión, pasando la ruta del servidor y una función de respuesta como argumentos
-    usuarioinstanciado.logIn("/logIn", responde);
-  }
-  
-  // Función para comprobar si las contraseñas coinciden
-  function comprobarClave() {
-    let clave = document.getElementById("clave");
-    let clave2 = document.getElementById("clave2");
-  
+  document.getElementById("correo").value,
+  document.getElementById("clave").value,
+  '',
+ 
+
+);
+usuarioinstanciado.logIn("/logIn", responde);
+}
+
+
+
+
+
+
+
+function comprobarClave() {
+    let clave = document.getElementById("clave")
+    let clave2 = document.getElementById("clave2")
+
     if (clave.value != clave2.value) {
-      alert("Las dos claves son distintas..."); // Alerta si las contraseñas no coinciden
+      alert("Las dos claves son distintas...")
+     
     } else {
-      registra(); // Llama a la función registra si las contraseñas coinciden
+      registra()
     }
-  }
-  
-  // Función de respuesta vacía
-  function responde() {
-    // Esta función puede utilizarse para manejar la respuesta del servidor al iniciar sesión, pero actualmente está vacía
-  }
-  
-  // Función para registrar un nuevo usuario
-  function registra() {
-    // Crea una instancia de usuario con los valores de correo, clave y nombreCompleto
+
+    
+}
+
+function responde() {
+
+}
+
+function registra() {
     var usuarioinstanciado = new _usuario(
+
       document.getElementById("correo").value,
       document.getElementById("clave").value,
-      document.getElementById("nombreCompleto").value
+      document.getElementById("nombreCompleto").value,
+      
+
     );
-    // Llama al método Guardar del objeto usuarioinstanciado para registrar el usuario, pasando la ruta del servidor y una función de respuesta como argumentos
     usuarioinstanciado.Guardar("/api/usuario", responde);
-    // Muestra una alerta de registro exitoso
-    alert("Registrado");
-  }
-  
-  </script>
-  
+    alert("Registrado")
+}
+
+
+
+   
+</script>
 </html>
 
 
