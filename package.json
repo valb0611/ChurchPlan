@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "name": "churchplan",
     "version": "0.0.1",
@@ -21,27 +20,3 @@
     },
     "license": "ISC"
 }
-=======
-{
-    "name": "churchplan",
-    "version": "0.0.1",
-    "description": "App para organizar las misas",
-    "main": "server.js",
-    "author": "Brandon Valverde",
-    "dependencies": {
-        "body-parser": "^1.18.3",
-        "express": "^3.21.2",
-        "mongoose": "~5.11.19",
-        "multer": "~0.1.6",
-        "nodemailer": "^5.1.1",
-        "path": "^0.12.7"
-    },
-    "devDependencies": {
-        "nodemon": "^1.11.0"
-    },
-    "scripts": {
-        "start": "node server.js"
-    },
-    "license": "ISC"
-}
->>>>>>> 29ea02d334301b56c1cebbc581882dd7205a176f
